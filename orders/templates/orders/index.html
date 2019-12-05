@@ -1,0 +1,23 @@
+<!-- #author: Oscar Guarnizo -->
+<!-- #university: Yachay Tech -->
+<!-- #course: Web Programming 2019 -->
+
+{% extends "orders/layout.html" %}
+
+<!-- {% block title %}
+     Menu
+     {% endblock %} -->
+
+{% block body %}
+{% for type, names in types.items %}
+<h3 align="center">{{type}}</h3>
+<ul>
+    {% for name, objects in names.items %}
+    <ul>{{name}} <br/> {% for object in objects %}
+    <br/> <a href="add/{{object.id}}" style="color:#11B6F3" >{{object.size}} ({{object.prize}}$) </a>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </ul>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,45 @@
+<!-- #author: Oscar Guarnizo -->
+<!-- #university: Yachay Tech -->
+<!-- #course: Web Programming 2019 -->
+
+
+{% extends "orders/layout.html" %}
+
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+<h2>Waiting Orders</h2>
+<ul>
+{% for order in pending_orders %}
+    <li>{{order}} <a href="cancel/{{order.id}}" style="color:#11B6F3" >Cancelar orden</a>
+        <ul>
+            {% for orderitem in order.orderitem_set.all %}
+                <li>{{orderitem}}</li>
+            {% endfor %}
+        </ul></li>
+{% endfor %}
+</ul>
+<h2>Completed Orders</h2>
+<ul>
+{% for order in completed_orders %}
+    <li>{{order}}</li>
+    <ul>
+        {% for orderitem in order.orderitem_set.all %}
+            <li>{{orderitem}}</li>
+        {% endfor %}
+    </ul></li>
+{% endfor %}
+</ul>
+<h2>Canceled Orders</h2>
+<ul>
+{% for order in canceled_orders %}
+    <li>{{order}}</li>
+    <ul>
+        {% for orderitem in order.orderitem_set.all %}
+            <li>{{orderitem}}</li>
+        {% endfor %}
+    </ul></li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,15 @@
+<!-- #author: Oscar Guarnizo -->
+<!-- #university: Yachay Tech -->
+<!-- #course: Web Programming 2019 -->
+{% load static %}
+<html>
+  <head>
+      <title>{% block title %}{% endblock %}</title>
+      <link rel="stylesheet" href="{% static 'users/main.css' %}"/>
+
+  </head>
+  <body>
+      {% block body %}
+      {% endblock %}
+  </body>
+</html>

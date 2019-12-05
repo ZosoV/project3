@@ -1,0 +1,36 @@
+<!-- #author: Oscar Guarnizo -->
+<!-- #university: Yachay Tech -->
+<!-- #course: Web Programming 2019 -->
+{% extends "orders/layout.html" %}
+
+{% load crispy_forms_tags %}
+{% block title %}Log In{% endblock %}
+
+{% block body %}
+{% if message %}
+    <div>
+        {{ message }}
+    </div>
+{% endif %}
+<div style="padding-top: 20%; width: 50%; padding-left: 20%; margin-left: 13%;">
+    <div class="content-section" style="color: #11B6F3; ">
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class = "border_bottom mb-4">Log In</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class = "btn btn-outline-info" type="submit">Log In</button>
+            </div>
+    
+        </form>
+        <div class="border-top pt-3">
+            <small class = "text-muted">
+              Create an account  <a class = "ml-2" href="/users/register">Register</a>
+            </small>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

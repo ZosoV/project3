@@ -1,0 +1,7 @@
+/* author: Oscar Guarnizo */
+/* university: Yachay Tech */
+/* course: Web Programming 2019 */
+
+body {                                   
+    background-image: url( "{% static 'users/img_black_texture.jpg' %}");
+  }

@@ -1,0 +1,26 @@
+<!-- #author: Oscar Guarnizo -->
+<!-- #university: Yachay Tech -->
+<!-- #course: Web Programming 2019 -->
+{% extends "orders/layout.html" %}
+
+{% load crispy_forms_tags %}
+{% block title %}
+MenuItem
+{% endblock %}
+
+{% block body %}
+<form method="post">
+    {% csrf_token %} 
+
+    <fieldset class="form-group">
+        <legend class = "border_bottom mb-4">{{menuitem}}</legend>
+        {{ form|crispy }}
+
+    </fieldset>
+
+    <!-- Button -->
+    <div class="form-group">
+        <button class = "btn btn-outline-info" type="submit">Agregar</button>
+    </div>
+</form>
+{% endblock %}
